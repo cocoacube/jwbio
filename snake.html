@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <style>
+        canvas {
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+        }
+        #controlContainer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 10px;
+        }
+        #controlRow, #middleRow {
+            display: flex;
+        }
+        .controlButton {
+            width: 40px;
+            height: 40px;
+            border: 1px solid #ccc;
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            margin: 5px;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="snakestyle.css">
+</head>
+<body>
+
+<canvas id="gameCanvas" width="700" height="500" style="background: url('Desert-Island-Oasis.jpg') no-repeat;
+    background-size: cover;"></canvas>
+<button id="restartButton" style="display:none;">Restart Game</button>
+
+<div id="controlContainer">
+    <div class="controlButton" onclick="virtualKeyPress('ArrowUp')">&#9650;</div> <!-- Up arrow -->
+
+    <div id="middleRow">
+        <div class="controlButton" onclick="virtualKeyPress('ArrowLeft')">&#9664;</div> <!-- Left arrow -->
+        <div class="controlButton"></div> <!-- Center empty button -->
+        <div class="controlButton" onclick="virtualKeyPress('ArrowRight')">&#9654;</div> <!-- Right arrow -->
+    </div>
+
+    <div class="controlButton" onclick="virtualKeyPress('ArrowDown')">&#9660;</div> 
+    <!-- Down arrow -->
+
+    <!-- <div class="controlButton" onclick="virtualKeyPress('ArrowUp')">&#9650;</div> -->
+
+</div>
+
+<div>
+    <label for="headChoice">Choose a Snake Head:</label>
+    <select id="headChoice" onchange="changeHead()">
+        <option value="rabbit.png">Rabbit</option>
+        <option value="cat.png">Cat</option>
+        <option value="boy.png">Boy</option>
+        <option value="girl.png">Girl</option>
+        <option value="god.png">God</option>
+        <option value="goddess.png">Goddess</option>
+    </select>
+</div>
+<script src="snake.js"></script>
+<script>
+    function virtualKeyPress(key) {
+        // Trigger the same function or logic you use for actual arrow key presses in your game.
+        var event = new KeyboardEvent('keydown', {key: key});
+        document.dispatchEvent(event);
+    }
+
+</script>
+</body>
+</html>

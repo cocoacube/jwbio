@@ -1,0 +1,27 @@
+.controlButton {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+/*    border: 2px solid #000;*/
+/*    border-radius: 10%; /* Gives the button a circular appearance */
+    background-color: #FFFFFF;
+    font-size: 24px;
+    cursor: pointer; /* Changes the mouse cursor when hovering over the button */
+    transition: background-color 0.3s; /* Smoothens the hover effect transition */
+}
+
+.controlButton:hover {
+    background-color: #FFFFFF; /* Changes the button color slightly when hovered */
+}
+
+.controlsContainer {
+    display: flex;
+    gap: 10px;
+    position: absolute; /* To position the container independently of other elements */
+    bottom: 10px; /* 10 pixels from the bottom of the page */
+    left: 50%; /* Centers the container horizontally */
+    transform: translateX(-50%); /* Fine-tunes the centering */
+}
